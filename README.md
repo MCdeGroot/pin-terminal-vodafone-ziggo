@@ -24,14 +24,11 @@ After that, I formulated a step-by-step plan to initiate the implementation of t
 
 4. Sending Request to the Southbound System:
 
-- Use an HTTP client to send a POST request to the /activate endpoint with the input parameters.
-
-5. Processing Responses:
-
 - Use WireMock stubs to simulate responses.
-- Setup a test envorinment with unit test to test the Activator class and test the outcome of the WireMock 
+- Use an HTTP client to send a POST request to the /activate endpoint with the input parameters. This can be done in a test environment by implementing the WireMock Server i created.
+- Run the test and find out to see if the Activator is corresponding well with the WireMockServer.
 
-6. Logging Records:
+5. Logging Records:
 
 - Use a logging library (log4j) to record logs with relevant information.
 
