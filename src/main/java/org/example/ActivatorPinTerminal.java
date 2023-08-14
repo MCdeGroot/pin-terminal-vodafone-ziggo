@@ -44,10 +44,13 @@ public class ActivatorPinTerminal {
             //Log the response
             logger.info("Response Status code: " + statusCode);
             if (statusCode == 201) {
+                logger.info("Response Status code: 201, the service has been successfully activated");
                 return "ACTIVE";
             } else if (statusCode == 404) {
+                logger.info("Response Status code: 404, the service could not be activated because it is not registered");
                 return "INACTIVE";
             } else if (statusCode == 409) {
+                logger.info("Response Status code: 409, the service could not be activated due to a conflict with the existing customer");
                 return "CONFLICT";
             } else {
                 return "UNKNOWN";
