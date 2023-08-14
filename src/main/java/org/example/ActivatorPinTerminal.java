@@ -9,10 +9,16 @@ import org.json.JSONObject;
 import org.apache.http.HttpResponse;
 import org.apache.http.impl.client.HttpClients;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class ActivatorPinTerminal {
 
     public ActivatorPinTerminal() {
     }
+
+    //add logger to the project
+    private static final Logger logger = LoggerFactory.getLogger(ActivatorPinTerminal.class);
 
     public static String activatePinTerminal(String customerId, String macAddress) {
 
@@ -33,6 +39,9 @@ public class ActivatorPinTerminal {
             // Execute the POST request
             HttpResponse httpResponse = httpClient.execute(httpPost);
 
+            //Log the response
+            logger.info("Response Status code: " +httpResponse.getStatusLine().getStatusCode()+ " ");
+
             // Process the response and return message based on responses
             int statusCode = httpResponse.getStatusLine().getStatusCode();
             if (statusCode == 201) {
@@ -45,7 +54,8 @@ public class ActivatorPinTerminal {
                 return "UNKNOWN";
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            //log error
+            logger.error("An error occurred activating the PIN Terminal", e);
             return "ERROR";
         }
     }
