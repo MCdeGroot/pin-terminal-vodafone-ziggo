@@ -14,18 +14,18 @@ After that, I formulated a step-by-step plan to initiate the implementation of t
 - Find out working of HTTP requests and responses. (used to Springboot so far)
 - Add WireMock library.
 
-2. Program Structure:
+2. MockServer
+- Create a MockServer handler to start a mock server and configure WireMock stubs
 
+3. Pin terminal activator:
 - Create a Java class for the activation named for example ActivatorPinTerminal.
-
-3. Accepting Input:
-
 - Implement a method to accept input parameters (customer ID and MAC address).
+- Use an HTTP client to send a POST request to the /activate endpoint with the input parameters
 
 4. Sending Request to the Southbound System:
 
 - Use WireMock stubs to simulate responses.
-- Use an HTTP client to send a POST request to the /activate endpoint with the input parameters. This can be done in a test environment by implementing the WireMock Server i created.
+- Set up tests to test the MockServer by implementing the WireMock Server I created.
 - Run the test and find out to see if the Activator is corresponding well with the WireMockServer.
 
 5. Logging Records:
