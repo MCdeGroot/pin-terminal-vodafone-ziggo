@@ -1,4 +1,3 @@
-import junit.framework.TestCase;
 import org.example.ActivatorPinTerminal;
 import org.junit.After;
 import org.junit.Before;
@@ -48,7 +47,6 @@ public class PinTerminalTest{
     public void testPinTerminalConflict(){
         String customerId = "11111";
         String macAddress = "AA:BB:CC:DD:EE:FF";
-
         String result = ActivatorPinTerminal.activatePinTerminal(customerId, macAddress);
 
         // assert the result

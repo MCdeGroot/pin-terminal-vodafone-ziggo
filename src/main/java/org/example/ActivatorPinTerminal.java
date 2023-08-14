@@ -9,8 +9,8 @@ import org.json.JSONObject;
 import org.apache.http.HttpResponse;
 import org.apache.http.impl.client.HttpClients;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class ActivatorPinTerminal {
 
@@ -18,7 +18,7 @@ public class ActivatorPinTerminal {
     }
 
     //add logger to the project
-    private static final Logger logger = LoggerFactory.getLogger(ActivatorPinTerminal.class);
+    protected static final Logger logger = LogManager.getLogger();
 
     public static String activatePinTerminal(String customerId, String macAddress) {
 
@@ -39,11 +39,10 @@ public class ActivatorPinTerminal {
             // Execute the POST request
             HttpResponse httpResponse = httpClient.execute(httpPost);
 
-            //Log the response
-            logger.info("Response Status code: " +httpResponse.getStatusLine().getStatusCode()+ " ");
-
             // Process the response and return message based on responses
             int statusCode = httpResponse.getStatusLine().getStatusCode();
+            //Log the response
+            logger.info("Response Status code: " + statusCode);
             if (statusCode == 201) {
                 return "ACTIVE";
             } else if (statusCode == 404) {
