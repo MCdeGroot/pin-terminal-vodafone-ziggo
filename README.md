@@ -2,7 +2,7 @@
 VodafoneZiggo Tech case
 
 In this repository you find my solutions for the vodafone tech case. Her i will describe shortly how i started this case and how I executed it. 
-Next, I created a list of aspects from the assignment that weren't clear to me, and I proceeded to research them on the internet. 
+First of all I created a list of aspects from the assignment that weren't clear to me, and I proceeded to research them on the internet. 
 For instance, WireMock I visited the website and went through the documentation to comprehend its functionality and how to implement it into my project.
 
 After that, I formulated a step-by-step plan to initiate the implementation of the assignment. 
