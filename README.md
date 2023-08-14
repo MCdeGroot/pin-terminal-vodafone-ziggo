@@ -28,14 +28,10 @@ After that, I formulated a step-by-step plan to initiate the implementation of t
 
 5. Processing Responses:
 
-- Receive and interpret the HTTP response from the southbound system.
 - Use WireMock stubs to simulate responses.
+- Setup a test envorinment with unit test to test the Activator class and test the outcome of the WireMock 
 
-6. Sending Status Back to the Orchestrator:
+6. Logging Records:
 
-- Depending on the response from the southbound system, determine which status ("ACTIVE", "INACTIVE") should be sent back to the orchestrator.
-
-7. Logging Records:
-
-- Use a logging library (java.util.logging) to record logs with relevant information.
+- Use a logging library (log4j) to record logs with relevant information.
 
