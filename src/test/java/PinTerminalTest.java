@@ -50,6 +50,6 @@ public class PinTerminalTest{
         String result = ActivatorPinTerminal.activatePinTerminal(customerId, macAddress);
 
         // assert the result
-        assertEquals("CONFLICT", result);
+        assertEquals("INACTIVE", result);
     }
 }

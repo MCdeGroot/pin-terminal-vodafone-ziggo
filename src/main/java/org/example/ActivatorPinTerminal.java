@@ -51,7 +51,7 @@ public class ActivatorPinTerminal {
                 return "INACTIVE";
             } else if (statusCode == 409) {
                 logger.info("Response Status code: 409, the service could not be activated due to a conflict with the existing customer");
-                return "CONFLICT";
+                return "INACTIVE";
             } else {
                 return "UNKNOWN";
             }
