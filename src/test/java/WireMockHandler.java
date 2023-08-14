@@ -3,20 +3,16 @@ import com.github.tomakehurst.wiremock.WireMockServer;
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 
 public class WireMockHandler {
-    private WireMockServer wireMockServer;
 
     // Create a WireMockServer instance to simulate a mock server.
+    private final WireMockServer wireMockServer = new WireMockServer();
+
+    // Method to start the server
     public WireMockHandler() {
-        WireMockServer wireMockServer = new WireMockServer(); //No-args constructor will start on port 8080
-        wireMockServer.start(); // Start the mock server.
+        wireMockServer.start();
     }
 
-    // Stop the wireMockServer when its no longer needed
-    public void stopWireMockServer(){
-        wireMockServer.stop();
-    }
-
-    private void configureWireMockStubs() {
+    public void configureWireMockStubs() {
 
         configureFor("localhost", wireMockServer.port());
 
@@ -37,6 +33,9 @@ public class WireMockHandler {
 
     }
 
-
+    // Stop the wireMockServer when its no longer needed
+    public void stopWireMockServer(){
+        wireMockServer.stop();
+    }
 
 }
